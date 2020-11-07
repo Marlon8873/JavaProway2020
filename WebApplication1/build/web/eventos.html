@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <label>Digite noome</label>
+        <input type="text" id="nome" 
+               onfocus="ganhaFoco(this)"
+               onblur="perdeFoco(this)" />
+        
+        <br />
+        <label>Dite sobrenome</label>
+        <input type="text" id="sobrenome" 
+               onfocus="ganhaFoco(this)" onblur="perdeFoco(this)" />
+        
+        <br />
+        <label>Dite Idade</label>
+        <input type="text" id="idade" 
+              />
+        
+        <script>
+            function ganhaFoco(el) {
+                el.style.background = "red";
+            }
+            
+            function perdeFoco(el) {
+                el.style.background = "yellow";
+            }
+            
+            function carregar() {
+               alert("Pagina carregada");
+            }
+          </script>  
+        </body>
+</html>

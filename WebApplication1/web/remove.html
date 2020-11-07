@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+      
+    <body>
+        <label>Frutas desejadas</label>
+        <input type="text" id="fruta"/>
+        <input type="button" value="Enviar" 
+                onclick="inserirFruta()"/>
+        <hr />
+     
+        <p id= "show"></p>
+         
+        <hr />
+        <label>Frutas excluídas</label>
+        <input type="text" id="excluir"/>
+        <input type="button" value="Excluir" 
+                onclick="excluirFruta()"/>
+          
+        <script>
+            var frutas = [];
+            
+               function inserirFruta(){
+                var x = document.getElementById("fruta").value;
+                frutas.push(x);
+                
+                document.getElementById("show") .innerHTML = frutas;
+                document.getElementById("fruta").value = "";
+                document.getElementById("fruta").focus();
+                
+            } 
+              function excluirFruta (){
+                var x = document.getElementById("excluir").value;  
+                var posicao = frutas.indexOf(x);
+                while (posicao != -1){
+                    delete frutas[posicao];
+                    posicao = frutas.indexOf(x);
+                }
+                document.getElementById("show") .innerHTML = frutas.join(" - ");
+              }
+        </script>
+    </body>
+</html>
+
